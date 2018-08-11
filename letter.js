@@ -17,7 +17,7 @@ function Letter(letter) {
 }
 
 Letter.prototype.toString = function() {
-    if (this.letterGuessed) {
+    if (this.letterGuessed || this.letter === ' ') {
         return this.letter;
     } else {
         return "_";
@@ -25,8 +25,9 @@ Letter.prototype.toString = function() {
 }
 
 Letter.prototype.checkLetter = function(guess) {
-    if (guess === this.letter || this.letter === ' ') {
+    if (guess === this.letter) {
         this.letterGuessed = true;
+        return true;
     }
 }
 
