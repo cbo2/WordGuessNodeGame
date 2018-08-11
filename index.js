@@ -1,7 +1,6 @@
 var Word = require("./word.js");
 var inquirer = require("inquirer");
 
-// Randomly selects a word and uses the Word constructor to store it
 puzzleWords = [
     "hello world",
     "never say never",
@@ -12,6 +11,7 @@ puzzleWords = [
     "May you live all the days of your life"
 ]
 
+// Randomly selects a word and uses the Word constructor to store it
 var word = new Word(puzzleWords[Math.floor(Math.random() * puzzleWords.length)]);
 word.start();
 console.log(word.getWord());
@@ -19,6 +19,7 @@ console.log(word.getWord());
 // Prompts the user for each guess and keeps track of the user's remaining guesses
 playRound();
 
+// play one round inquiring a letter from the user and checking against the puzzle
 function playRound() {
 
     // We create a list prompt. Specifying that the user must pick a random number between 1 and 5.
@@ -28,7 +29,7 @@ function playRound() {
             name: "userGuess",
             message: "Guess a letter [a-z]",
             validate: function (value) {
-                // test for only lower case a-z or upper case A-Z
+                // test for only lower case a-z or upper case A-Z using regex
                 if (/[a-z]/i.test(value)) {
                     return true;
                 }

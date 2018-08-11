@@ -3,6 +3,7 @@ function Letter(letter) {
     this.letterGuessed = false;
 }
 
+// toString will hide unguessed Letters with underscores if not guessed yet
 Letter.prototype.toString = function () {
     if (this.letterGuessed || this.letter === ' ') {
         return this.letter;
