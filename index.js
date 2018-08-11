@@ -1,5 +1,3 @@
-// index.js: The file containing the logic for the course of the game, which depends on Word.js and:
-
 var Word = require("./word.js");
 var inquirer = require("inquirer");
 
@@ -9,7 +7,7 @@ puzzleWords = [
     "never say never",
     "are we there yet",
     "node",
-    "zip it", 
+    "zip it",
     "get busy living or get busy dying",
     "May you live all the days of your life"
 ]
