@@ -14,14 +14,14 @@ function Word(letterArray) {
 
     this.start = function() {
         for (var i = 0; i < this.originalLetters.length; i++) {
-            this.letters[i] = new Letter(this.originalLetters[i]);
+            this.letters[i] = new Letter(this.originalLetters[i].toLowerCase());
         }
     } 
 }
 
 Word.prototype.guess = function(letterGuessed) {
     for (var i = 0; i < this.letters.length; i++) {
-        this.letters[i].checkLetter(letterGuessed);
+        this.letters[i].checkLetter(letterGuessed.toLowerCase());
     }
 }
 
@@ -29,7 +29,7 @@ Word.prototype.getWord = function() {
     var returnWord = "";
     for (var i = 0; i < this.letters.length; i++) {
         // returnWord += this.letters[i].toString();
-        returnWord += this.letters[i];
+        returnWord += this.letters[i];   // will make a call to Letter.toString()
     }
     return returnWord;
 }

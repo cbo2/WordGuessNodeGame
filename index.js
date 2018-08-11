@@ -5,7 +5,7 @@ var inquirer = require("inquirer");
 
 // Randomly selects a word and uses the Word constructor to store it
 
-var word = new Word("hello");
+var word = new Word("hello world");
 word.start();
 console.log(word.getWord());
 
